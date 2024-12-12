@@ -1,0 +1,711 @@
+/* BACKGROUND */
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(45deg,rgb(10, 72, 240),  15%, rgb(7, 163, 254), 60%, rgb(6, 181, 245));
+}
+
+.sun {
+    position: absolute;
+    top: -70px;
+    right: -70px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(-125deg, rgb(247, 239, 8), 65%, rgb(245, 246, 217));
+}
+
+/* SNOW ANIMATION */ 
+.snow {
+    position: relative;
+    height: 100vh;
+    z-index: 10;
+}
+
+.snow.ball {
+    position: absolute;
+    top: -5%;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 1px 2px 4px gray;
+    animation: snowball 18s linear infinite;
+}
+
+.snow.ball:first-of-type {
+    left: 5%;
+    animation-delay: 2s;
+    animation-duration: 18s;
+}
+
+.snow.ball:nth-of-type(2) {
+    left: 12%;
+    animation-delay: 15s;
+    animation-duration: 10s;
+}
+
+.snow.ball:nth-of-type(3) {
+    left: 20%;
+    animation-delay: 3s;
+    animation-duration: 15s;
+}
+
+.snow.ball:nth-of-type(4) {
+    left: 26%;
+    animation-delay: 1s;
+    animation-duration: 13s;
+}
+
+.snow.ball:nth-of-type(5) {
+    left: 35%;
+    animation-delay: 14s;
+    animation-duration: 12s;
+}
+
+.snow.ball:nth-of-type(6) {
+    left: 42%;
+    animation-delay: 6s;
+    animation-duration: 16s;
+}
+
+.snow.ball:nth-of-type(7) {
+    left: 50%;
+    animation-delay: 12s;
+    animation-duration: 14s;
+}
+
+.snow.ball:nth-of-type(8) {
+    left: 56%;
+    animation-delay: 17s;
+    animation-duration: 11s;
+}
+
+.snow.ball:nth-of-type(9) {
+    left: 62%;
+    animation-delay: 10s;
+    animation-duration: 18s;
+}
+
+.snow.ball:nth-of-type(10) {
+    left: 70%;
+    animation-delay: 8s;
+    animation-duration: 17s;
+}
+
+.snow.ball:nth-of-type(11) {
+    left: 76%;
+    animation-delay: 2s;
+    animation-duration: 13s;
+}
+
+.snow.ball:nth-of-type(12) {
+    left: 82%;
+    animation-delay: 6s;
+    animation-duration: 15s;
+}
+
+.snow.ball:nth-of-type(13) {
+    left: 90%;
+    animation-delay: 14s;
+    animation-duration: 18s;
+}
+
+.snow.ball:nth-of-type(14) {
+    left: 92%;
+    animation-delay: 15s;
+    animation-duration: 14s;
+}
+
+.snow.ball:nth-of-type(15) {
+    left: 95%;
+    animation-delay: 17s;
+    animation-duration: 11s;
+}
+
+@keyframes snowball {
+    0% {
+        transform: translate(0);
+        opacity: 1;
+    }
+    20% {
+        transform: translate(5vw, 20vh);
+        opacity: 0.7;
+    }
+    40% {
+        transform: translate(-5vw, 40vh);
+        opacity: 0.5;
+    }
+    60% {
+        transform: translate(10vw, 60vh);
+        opacity: 0.3;
+    }
+    80% {
+        transform: translate(-10vw, 80vh);
+        opacity: 0.1;
+    }
+    100% { 
+        transform: translate(15vw, 100vh);
+        opacity: 0;
+    }
+}
+
+
+/* FOREGROUND */
+.ground {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(20deg, rgb(45, 170, 242), 20%, rgb(142, 223, 239), 80%, rgb(45, 170, 242));
+}
+
+.mountain {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(20deg, rgb(45, 170, 242), 20%, rgb(142, 223, 239), 80%, rgb(45, 170, 242));
+    transform: rotate(45deg);
+    z-index: -1;
+}
+
+.mountain.left {
+    position: absolute;
+    bottom: -20px;
+    left: -80px
+}
+
+.mountain.middle {
+    position: absolute;
+    bottom: -100px;
+    left: 80px;
+}
+
+.mountain.right {
+    position: absolute;
+    bottom: -80px;
+    right: -80px;
+}
+
+.snowcap {
+    position: relative;
+    top: -18px;
+    right: 78px;
+    width: 0;
+    border-left: 120px solid transparent;
+    border-right: 120px solid transparent;
+    border-bottom: 120px solid rgba(255, 255, 255, 0.3);
+    transform: rotate(-45deg);
+}
+
+/* NORTH POLE */
+.north-pole {
+    position: absolute;
+    bottom: 100px;
+    left: 20vw;
+}
+
+.pole-top {
+    position: relative;
+    bottom: -2px;
+    left: -2px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    z-index: 1;
+}
+
+.pole-body {
+    width: 10px;
+    height: 200px;
+    background: linear-gradient(-45deg, red, white, red, white, red, white, red);
+}
+
+.pole-flag {
+    position: relative;
+    bottom: 200px;
+    left: 5px;
+    width: 80px;
+    height: 55px;
+    background-color: white;
+    z-index: -1;
+}
+
+.pole-flag p {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    text-align: center;
+    align-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: red;
+}
+
+/* SANTA */
+.santa {
+    position: absolute;
+    top: 44vh;
+    left: 46vw;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    z-index: 1;
+    transform: scale(1.25);
+}
+
+.santa * {
+    position: absolute;
+}
+
+/* SANTA HAT */
+.santa-hat {
+    left: 8px;
+    top: -55px;
+    z-index: 1;
+    transform: scale(1.1);
+}
+
+.santa-hat-ball {
+    top: -8px;
+    left: 115px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 3px rgb(241, 219, 216);
+    background-color: white;
+    z-index: 1;
+}
+
+.santa-hat-body {
+    border-bottom: 75px solid red;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+}
+
+.santa-hat-body.side {
+    top: -6.82px;
+    left: -10.5px;
+    transform: scale(.8) rotate(180deg);
+}
+
+.santa-hat-bottom-container {
+    top: 60px;
+    left: -5px;
+}
+
+.santa-hat-bottom {
+    width: 35px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.santa-hat-bottom:nth-of-type(2) {
+    left: 20px;
+}
+
+.santa-hat-bottom:nth-of-type(3) {
+    left: 45px;
+}
+
+.santa-hat-bottom:nth-of-type(4) {
+    left: 70px;
+}
+
+/* SANTA HEAD */
+.santa-head {
+    width: 40%;
+    height: 40%;
+    border-radius: 60% 60% 50% 50%;
+    box-shadow: 0.25px 0.5px 1px black;
+    background-color: rgb(224, 172, 105);
+}
+
+.santa-ears {
+    width: 100%;
+    height: 100%;
+}
+
+.santa-ear {
+    top: 42px;
+    width: 10%;
+    height: 20%;
+    border-radius: 60% 60% 50% 50%;
+    box-shadow: 0.25px 0.5px 1px black;
+    background-color: rgb(224, 172, 105);
+    z-index: -1;
+}
+
+.santa-ear.left {
+    left: -5px
+}
+
+.santa-ear.right {
+    right: -5px
+}
+
+/* SANTA FACE */
+.santa-face {
+    width: 100%;
+    height: 100%;
+    border-radius: 60% 60% 50% 50%;
+}
+
+.santa-eyes {
+    position: absolute;
+    top: 42px;
+    width: 100%;
+    height: 25%;
+}
+
+.santa-eye {
+    width: 20%;
+    height: 100%;
+    border-radius: 100% 100% 80% 80%;
+    background-color: white;
+}
+
+.santa-eye.left {
+    left: 22px;
+}
+
+.santa-eye.right {
+    right: 22px;
+}
+
+.santa-eye-iris {
+    width: 60%;
+    height: 70%;
+    border-radius: 100% 100% 80% 80%;
+    background-color: black;
+}
+
+.santa-eye-iris.left {
+    top: 5px;
+    left: 5px;
+}
+
+.santa-eye-iris.right {
+    top: 5px;
+    right: 5px;
+}
+
+.santa-eye-pupil {
+    top: 2px;
+    width: 60%;
+    height: 50%;
+    border-radius: 100% 100% 80% 80%;
+    background-color: white;
+}
+
+.santa-nose {
+    top: 75px;
+    left: 48px;
+    width: 20%;
+    height: 10%;
+    border-radius: 60% 60% 50% 50%;
+    box-shadow: 0.25px 0.5px 1px black;
+    background-color: rgb(224, 172, 105);
+}
+
+.santa-cheeks {
+    width: 100%;
+    height: 8%;
+}
+
+.santa-blush {
+    top: 78px;
+    height: 100%;
+    width: 15%;
+    border-radius: 80%;
+    background-color: pink;
+}
+
+.santa-blush.left {
+    left: 15px;
+}
+
+.santa-blush.right {
+    right: 15px;
+}
+
+.santa-beard {
+    top: -3px;
+    left: 1.5px;
+    width: 100%;
+}
+
+.santa-beard-hair {
+    top: 95px;
+    width: 30px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.santa-beard-hair:nth-of-type(2) {
+    left: 25px
+}
+
+.santa-beard-hair:nth-of-type(3) {
+    left: 45px
+}
+
+.santa-beard-hair:nth-of-type(4) {
+    left: 65px
+}
+
+.santa-beard-hair:nth-of-type(5) {
+    left: 85px
+}
+
+.santa-beard-hair:nth-of-type(6) {
+    top: 110px;
+    left: 15px
+}
+
+.santa-beard-hair:nth-of-type(7) {
+    top: 110px;
+    left: 35px
+}
+
+.santa-beard-hair:nth-of-type(8) {
+    top: 110px;
+    left: 55px
+}
+
+.santa-beard-hair:nth-of-type(9) {
+    top: 110px;
+    left: 75px
+}
+
+.santa-beard-hair:nth-of-type(9) {
+    top: 110px;
+    left: 75px
+}
+
+.santa-beard-hair:nth-of-type(10) {
+    top: 125px;
+    left: 30px
+}
+
+.santa-beard-hair:nth-of-type(11) {
+    top: 125px;
+    left: 45px
+}
+
+.santa-beard-hair:nth-of-type(12) {
+    top: 125px;
+    left: 60px
+}
+
+.santa-beard-hair:nth-of-type(13) {
+    top: 140px;
+    left: 45px
+}
+
+/* SANTA BODY */
+.santa-body {
+    top: 85px;
+    left: -14px;
+    width: 50%;
+    height: 40%;
+    border-radius: 60% 60% 50% 50%;
+    background-color: red;
+    box-shadow: 0 1px 1px black;
+    z-index: -1;
+}
+
+.santa-button {
+    top: 45px;
+    left: 68px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.santa-button:nth-of-type(2) {
+    top: 65px;
+}
+
+.santa-button:nth-of-type(3) {
+    top: 85px;
+}
+
+.santa-body-bottom-container {
+    top: 100px;
+    left: -5px;
+}
+
+.santa-body-bottom {
+    width: 35px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: white;
+}
+.santa-body-bottom:first-of-type {
+    top: -10px;
+}
+
+.santa-body-bottom:nth-of-type(2) {
+    top: -5px;
+    left: 20px;
+}
+
+.santa-body-bottom:nth-of-type(3) {
+    left: 45px;
+}
+
+.santa-body-bottom:nth-of-type(4) {
+    left: 70px;
+}
+
+.santa-body-bottom:nth-of-type(5) {
+    left: 90px;
+}
+
+.santa-body-bottom:nth-of-type(6) {
+    top: -5px;
+    left: 110px;
+}
+
+.santa-body-bottom:nth-of-type(7) {
+    top: -10px;
+    left: 130px;
+}
+
+.santa-arms {
+    top: 15px;
+    width: 100%;
+    height: 80%;
+}
+
+.santa-arm {
+    top: -20px;
+    width: 25%;
+    height: 100%;
+    border-radius: 30% 30% 30% 120%;
+    background-color: red;
+}
+
+.santa-arm.left {
+    left: -15px;
+    transform: rotate(120deg) scaleX(-1);
+    animation: wave-left 4s ease-in-out 0s infinite;
+}
+
+.santa-arm.right {
+    right: -15px;
+    transform: rotate(-120deg) scaleX(-1);
+    animation: wave-right 4s ease-in-out 0s infinite;
+}
+
+.santa-hand {
+    top: 70px;
+    left: 5px;
+    width: 100%;
+    height: 30%;
+    border-radius: 50%;
+    background-color: black;
+}
+
+/* SANTA LEGS */
+.santa-legs {
+    top: 175px;
+    left: 22px;
+    width: 25%;
+    height: 30%;
+    z-index: -2;
+}
+
+.santa-leg {
+    width: 50%;
+    height: 75%;
+}
+
+.santa-leg.left {
+    background: linear-gradient(90deg, red, 99.9%, black);
+}
+
+.santa-leg.right {
+    background: linear-gradient(90deg, black, 0.01%, red);
+    right: 0px;
+}
+
+.santa-shoe {
+    top: 50px;
+    left: -2px;
+    width: 110%;
+    height: 40%;
+    border-radius: 40%;
+    background-color: black;
+}
+
+/* SANTA ARMS ANIMATION */
+@keyframes wave-left {
+    25% {
+        transform: rotate(140deg) scaleX(-1);
+    }
+    50% {
+        transform: rotate(120deg) scaleX(-1);
+    }
+    75% {
+        transform: rotate(140deg) scaleX(-1);
+    }
+    100% {
+        transform: rotate(120deg) scaleX(-1);
+    }
+    
+}
+
+@keyframes wave-right {
+    25% {
+        transform: rotate(-140deg) scaleX(-1);
+    }
+    50% {
+        transform: rotate(-120deg) scaleX(-1);
+    }
+    75% {
+        transform: rotate(-140deg) scaleX(-1);
+    }
+    100% {
+        transform: rotate(-120deg) scaleX(-1);
+    }
+}
+
+/* TEXT */
+.text {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+}
+
+.text p {
+    position: relative;
+    left: -25%;
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: red;
+    animation: text-glide 10s ease-in-out 0s infinite;
+}
+
+@keyframes text-glide {
+    25% {
+        color: white;
+    }
+    50% {
+        color: red;
+    }
+    75% {
+        color: white;
+    }
+    100% {
+        left: 100%;
+        color: red;
+    }
+}
